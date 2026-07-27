@@ -1,61 +1,92 @@
-# PropertyWise AI
+# PropertyWise AI 🏠🤖
 
 ## About The App
 
-PropertyWise AI is an AI-powered real estate assistant that helps users find, understand, and manage property information easily.
+PropertyWise AI is an AI-powered real estate application designed to help users manage property information and get smart assistance for property-related decisions.
 
-The problem it solves:
-Many people struggle with searching properties, understanding real estate information, and getting quick guidance. PropertyWise AI provides an easy-to-use platform with AI assistance to help users make better property decisions.
+### Problem It Solves
+
+Many people face difficulties while searching, managing, and understanding property information. PropertyWise AI provides a simple and user-friendly platform where users can manage properties and get AI-based guidance.
+
+This app is useful for property buyers, sellers, and people who need quick real estate assistance.
+
+---
 
 ## Live Demo
 
-Add your deployed Vercel URL here:
+https://propertywise-ai-project-1jz4-a5ly4g878-shehwar162-hues-projects.vercel.app/
 
-https://your-vercel-url.vercel.app
+---
 
 ## Features
 
-- User registration and login
-- Property dashboard
-- AI-powered property assistant
-- Property information management
-- Easy navigation and user-friendly interface
+- User Registration
+- User Login
+- Dashboard Management
+- Add New Properties
+- Search Properties
+- View Property Information
+- AI-powered Real Estate Assistant
+- Reports Section
+- Responsive and user-friendly interface
+
+---
 
 ## AI Feature
 
-PropertyWise AI includes an AI assistant that helps users with real estate related questions and provides useful property guidance.
+PropertyWise AI includes an AI Assistant that helps users with real estate-related questions.
+
+The AI assistant can:
+- Answer property-related questions
+- Provide property guidance
+- Help users understand real estate information
+- Give smart recommendations
 
 ### AI System Prompt
-
-"You are PropertyWise AI assistant. Help users with real estate questions, property analysis, recommendations, and provide clear helpful answers."
+You are PropertyWise AI Assistant.
+Help users with real estate questions, property analysis, recommendations, and provide clear and useful answers.
+Always give helpful, accurate, and easy-to-understand guidance.
+---
 
 ## Technologies Used
 
-- React + Vite
+- React.js
+- Vite
 - JavaScript
-- Vercel (Deployment)
-- GitHub (Version Control)
+- React Router
+- HTML & CSS
+- Local Storage
+- GitHub
+- Vercel
 - AI API / AI Model
+
+---
 
 ## Screenshots
 
-Add 3 or more screenshots of the application here.
+Add screenshots of the working application below:
+
+### Home Page
+
+![Home Page](screenshots/home.png)
+
+### Login Page
+
+![Login Page](screenshots/login.png)
+
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### AI Assistant
+
+![AI Assistant](screenshots/ai-assistant.png)
+
+---
 
 ## How To Run Locally
 
-1. Clone the repository
-
-2. Install dependencies:
-
+```bash
+git clone https://github.com/shehwar162-hue/propertywise-ai-project.git
 npm install
-
-3. Start development server:
-
 npm run dev
-
-4. Open the local URL in your browser.
-
-## Environment Variables
-
-Keep API keys and secrets in environment variables.
-Never commit private keys to GitHub.

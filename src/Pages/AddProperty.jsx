@@ -1,211 +1,76 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useEffect, useState } from "react";
 
-export default function Dashboard() {
+export default function AddProperty() {
 
   const navigate = useNavigate();
 
-  const [user, setUser] = useState(null);
-  const [properties, setProperties] = useState([]);
-  const [search, setSearch] = useState("");
+  const [property, setProperty] = useState({
+    title:"",
+    location:"",
+    price:"",
+    size:"",
+    type:""
+  });
 
 
-  useEffect(() => {
+  const addProperty = () => {
 
-    const savedUser = JSON.parse(localStorage.getItem("user"));
-    setUser(savedUser);
-
-    const savedProperties =
+    const oldProperties =
       JSON.parse(localStorage.getItem("properties")) || [];
 
-    setProperties(savedProperties);
+    oldProperties.push(property);
 
-  }, []);
+    localStorage.setItem(
+      "properties",
+      JSON.stringify(oldProperties)
+    );
 
+    alert("Property Added Successfully!");
 
-
-  const logout = () => {
-
-    localStorage.removeItem("user");
-
-    alert("Logout Successful!");
-
-    navigate("/login");
-
+    navigate("/dashboard");
   };
 
 
-
-  const filteredProperties = properties.filter((property) =>
-    property.title.toLowerCase().includes(search.toLowerCase()) ||
-    property.location.toLowerCase().includes(search.toLowerCase()) ||
-    property.type.toLowerCase().includes(search.toLowerCase())
-  );
-
-
-
   return (
+    <div style={{padding:"30px"}}>
 
-    <div
-      style={{
-        padding:"30px",
-        background:"#f5f7fb",
-        minHeight:"100vh"
-      }}
-    >
+      <h1>➕ Add Property</h1>
 
-      <h1>📊 PropertyWise AI Dashboard</h1>
-
-
-      {user && (
-        <h3>
-          Welcome, {user.name} 👋
-        </h3>
-      )}
-
-
-
-      <button style={buttonStyle}
-        onClick={() => navigate("/add-property")}
-      >
-        ➕ Add Property
-      </button>
-
-
-      <button style={buttonStyle}
-        onClick={() => navigate("/ai")}
-      >
-        🤖 AI Assistant
-      </button>
-
-
-      <button style={buttonStyle}
-        onClick={() => navigate("/reports")}
-      >
-        📈 Reports
-      </button>
-
-
-      <button style={buttonStyle}
-        onClick={logout}
-      >
-        🚪 Logout
-      </button>
-
-
-
-      <h2 style={{marginTop:"30px"}}>
-        🔍 Search Properties
-      </h2>
-
-
-      <input
-        placeholder="Search property..."
-        value={search}
-        onChange={(e)=>setSearch(e.target.value)}
-        style={{
-          padding:"12px",
-          width:"300px",
-          borderRadius:"8px"
-        }}
+      <input placeholder="Title"
+        onChange={(e)=>setProperty({...property,title:e.target.value})}
       />
 
+      <br/><br/>
 
+      <input placeholder="Location"
+        onChange={(e)=>setProperty({...property,location:e.target.value})}
+      />
 
-      <h2 style={{marginTop:"40px"}}>
-        🏠 Available Properties
-      </h2>
+      <br/><br/>
 
+      <input placeholder="Price"
+        onChange={(e)=>setProperty({...property,price:e.target.value})}
+      />
 
+      <br/><br/>
 
-      {
-        filteredProperties.length === 0 ?
+      <input placeholder="Size"
+        onChange={(e)=>setProperty({...property,size:e.target.value})}
+      />
 
-        <p>No properties found.</p>
+      <br/><br/>
 
-        :
+      <input placeholder="Type"
+        onChange={(e)=>setProperty({...property,type:e.target.value})}
+      />
 
-        filteredProperties.map((property,index)=>(
+      <br/><br/>
 
-          <div
-            key={index}
-            style={{
-              background:"white",
-              padding:"20px",
-              margin:"20px 0",
-              borderRadius:"15px",
-              boxShadow:"0 4px 8px rgba(0,0,0,0.1)"
-            }}
-          >
-
-
-            {
-              property.image && (
-
-                <img
-                  src={property.image}
-                  alt="Property"
-                  width="250"
-                  style={{
-                    borderRadius:"10px"
-                  }}
-                />
-
-              )
-            }
-
-
-
-            <h3>
-              🏡 {property.title}
-            </h3>
-
-
-            <p>
-              📍 Location: {property.location}
-            </p>
-
-
-            <p>
-              💰 Price: {property.price}
-            </p>
-
-
-            <p>
-              📐 Size: {property.size}
-            </p>
-
-
-            <p>
-              🏠 Type: {property.type}
-            </p>
-
-
-          </div>
-
-        ))
-
-      }
-
+      <button onClick={addProperty}>
+        Save Property
+      </button>
 
     </div>
-
   );
-
 }
-
-
-
-const buttonStyle = {
-
-  margin:"10px",
-
-  padding:"12px 20px",
-
-  borderRadius:"8px",
-
-  border:"none",
-
-  cursor:"pointer"
-
-};
