@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
-import Dashboard from "./pages/Dashboard";
-import AIAssistant from "./pages/AIAssistant";
-import AddProperty from "./pages/AddProperty";
-import Reports from "./pages/Reports";
+import Home from "./Pages/Home";
+import Login from "./Pages/Login";
+import Register from "./Pages/Register";
+import Dashboard from "./Pages/Dashboard";
+import AIAssistant from "./Pages/AIAssistant";
+import AddProperty from "./Pages/AddProperty";
+import Reports from "./Pages/Reports";
 
 
 function App() {
