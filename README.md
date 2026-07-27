@@ -1,16 +1,61 @@
-# React + Vite
+# PropertyWise AI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## About The App
 
-Currently, two official plugins are available:
+PropertyWise AI is an AI-powered real estate assistant that helps users find, understand, and manage property information easily.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The problem it solves:
+Many people struggle with searching properties, understanding real estate information, and getting quick guidance. PropertyWise AI provides an easy-to-use platform with AI assistance to help users make better property decisions.
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Add your deployed Vercel URL here:
 
-## Expanding the ESLint configuration
+https://your-vercel-url.vercel.app
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Features
+
+- User registration and login
+- Property dashboard
+- AI-powered property assistant
+- Property information management
+- Easy navigation and user-friendly interface
+
+## AI Feature
+
+PropertyWise AI includes an AI assistant that helps users with real estate related questions and provides useful property guidance.
+
+### AI System Prompt
+
+"You are PropertyWise AI assistant. Help users with real estate questions, property analysis, recommendations, and provide clear helpful answers."
+
+## Technologies Used
+
+- React + Vite
+- JavaScript
+- Vercel (Deployment)
+- GitHub (Version Control)
+- AI API / AI Model
+
+## Screenshots
+
+Add 3 or more screenshots of the application here.
+
+## How To Run Locally
+
+1. Clone the repository
+
+2. Install dependencies:
+
+npm install
+
+3. Start development server:
+
+npm run dev
+
+4. Open the local URL in your browser.
+
+## Environment Variables
+
+Keep API keys and secrets in environment variables.
+Never commit private keys to GitHub.
