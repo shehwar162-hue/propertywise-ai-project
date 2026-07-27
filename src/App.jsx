@@ -1,11 +1,12 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import Login from "./Pages/Login";
-import Register from "./Pages/Register";
-import Dashboard from "./Pages/Dashboard";
-import AIAssistant from "./Pages/AIAssistant";
-import AddProperty from "./Pages/AddProperty";
-import Reports from "./Pages/Reports";
+
+import Home from "./pages/Home";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Dashboard from "./pages/Dashboard";
+import AddProperty from "./pages/AddProperty";
+import AIAssistant from "./pages/AIAssistant";
+import Reports from "./pages/Reports";
 
 
 function App() {
@@ -16,46 +17,19 @@ function App() {
 
       <Routes>
 
-        <Route 
-          path="/" 
-          element={<Home />} 
-        />
+        <Route path="/" element={<Home />} />
 
+        <Route path="/login" element={<Login />} />
 
-        <Route 
-          path="/login" 
-          element={<Login />} 
-        />
+        <Route path="/register" element={<Register />} />
 
+        <Route path="/dashboard" element={<Dashboard />} />
 
-        <Route 
-          path="/register" 
-          element={<Register />} 
-        />
+        <Route path="/add-property" element={<AddProperty />} />
 
+        <Route path="/ai" element={<AIAssistant />} />
 
-        <Route 
-          path="/dashboard" 
-          element={<Dashboard />} 
-        />
-
-
-        <Route 
-          path="/ai" 
-          element={<AIAssistant />} 
-        />
-
-
-        <Route 
-          path="/add-property" 
-          element={<AddProperty />} 
-        />
-
-
-        <Route 
-          path="/reports" 
-          element={<Reports />} 
-        />
+        <Route path="/reports" element={<Reports />} />
 
       </Routes>
 
