@@ -1,0 +1,104 @@
+import { useEffect, useState } from "react";
+
+export default function Reports() {
+
+  const [properties, setProperties] = useState([]);
+
+
+  useEffect(() => {
+
+    const savedProperties =
+      JSON.parse(localStorage.getItem("properties")) || [];
+
+    setProperties(savedProperties);
+
+  }, []);
+
+
+
+  const totalProperties = properties.length;
+
+
+  const locations = [
+    ...new Set(
+      properties.map((property) => property.location)
+    )
+  ];
+
+
+  const types = [
+    ...new Set(
+      properties.map((property) => property.type)
+    )
+  ];
+
+
+
+  return (
+
+    <div style={{ padding:"30px" }}>
+
+      <h1>📊 PropertyWise AI Reports</h1>
+
+
+      <div style={{
+        border:"1px solid black",
+        padding:"20px",
+        margin:"20px"
+      }}>
+
+        <h2>
+          🏠 Total Properties
+        </h2>
+
+        <h1>
+          {totalProperties}
+        </h1>
+
+      </div>
+
+
+
+      <div style={{
+        border:"1px solid black",
+        padding:"20px",
+        margin:"20px"
+      }}>
+
+        <h2>
+          📍 Locations
+        </h2>
+
+        <p>
+          {locations.length === 0
+          ? "No Data"
+          : locations.join(", ")}
+        </p>
+
+      </div>
+
+
+
+      <div style={{
+        border:"1px solid black",
+        padding:"20px",
+        margin:"20px"
+      }}>
+
+        <h2>
+          🏡 Property Types
+        </h2>
+
+        <p>
+          {types.length === 0
+          ? "No Data"
+          : types.join(", ")}
+        </p>
+
+      </div>
+
+
+    </div>
+
+  );
+}
