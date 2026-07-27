@@ -42,15 +42,9 @@ export default function Dashboard() {
 
 
   return (
-
-    <div style={{
-      padding:"30px",
-      background:"#f5f7fb",
-      minHeight:"100vh"
-    }}>
+    <div style={containerStyle}>
 
       <h1>📊 PropertyWise AI Dashboard</h1>
-
 
       {user && (
         <h3>
@@ -92,4 +86,94 @@ export default function Dashboard() {
 
 
 
-      <h2>🔍
+      <h2>🔍 Search Properties</h2>
+
+
+      <input
+        placeholder="Search property..."
+        value={search}
+        onChange={(e) => setSearch(e.target.value)}
+        style={inputStyle}
+      />
+
+
+      <h2 style={{marginTop:"30px"}}>
+        🏠 Available Properties
+      </h2>
+
+
+      {
+        filteredProperties.length === 0 ? (
+
+          <p>No properties found.</p>
+
+        ) : (
+
+          filteredProperties.map((property, index) => (
+
+            <div key={index} style={cardStyle}>
+
+              <h3>
+                🏡 {property.title}
+              </h3>
+
+              <p>
+                📍 Location: {property.location}
+              </p>
+
+              <p>
+                💰 Price: {property.price}
+              </p>
+
+              <p>
+                📐 Size: {property.size}
+              </p>
+
+              <p>
+                🏠 Type: {property.type}
+              </p>
+
+            </div>
+
+          ))
+
+        )
+      }
+
+
+    </div>
+  );
+}
+
+
+
+const containerStyle = {
+  padding:"30px",
+  background:"#f5f7fb",
+  minHeight:"100vh"
+};
+
+
+const buttonStyle = {
+  margin:"10px",
+  padding:"12px 20px",
+  borderRadius:"8px",
+  border:"none",
+  cursor:"pointer"
+};
+
+
+const inputStyle = {
+  padding:"12px",
+  width:"300px",
+  borderRadius:"8px"
+};
+
+
+const cardStyle = {
+  background:"white",
+  padding:"20px",
+  margin:"15px 0",
+  borderRadius:"15px",
+  boxShadow:"0 4px 8px rgba(0,0,0,0.1)"
+};
